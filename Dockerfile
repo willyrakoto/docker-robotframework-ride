@@ -12,9 +12,7 @@ RUN apt-get -y update \
 
 RUN rm /etc/apt/sources.list.d/wily-copies.list
 
-RUN pip install robotframework==3.0
-RUN pip install robotframework-requests==0.4.5
-RUN pip install robotframework-ride==1.5.2.1
+RUN pip install robotframework==3.0 requests==2.12.3 robotframework-requests==0.4.5 robotframework-ride==1.5.2.1
 
 RUN mkdir /robot
 VOLUME /robot
