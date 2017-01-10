@@ -14,7 +14,12 @@ RUN rm /etc/apt/sources.list.d/wily-copies.list
 
 RUN pip install robotframework==3.0 requests==2.12.3 robotframework-requests==0.4.5 robotframework-ride==1.5.2.1
 
+
+
 RUN mkdir /robot
 VOLUME /robot
+COPY runpybot.sh /tmp/
+RUN chmod +x /tmp/runpybot.sh
 WORKDIR /robot
-CMD ["ride.py"]
+
+CMD ["/tmp/runpybot.sh"]
