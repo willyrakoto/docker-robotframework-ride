@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 MAINTAINER softsam
 
+ENV http_proxy=http://p-goodway.rd.francetelecom.fr:3128
+ENV https_proxy=http://p-goodway.rd.francetelecom.fr:3128
+
 RUN echo "deb http://archive.ubuntu.com/ubuntu wily main universe" | tee /etc/apt/sources.list.d/wily-copies.list
 
 RUN apt-get -y update \
